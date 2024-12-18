@@ -104,6 +104,10 @@ public class FastImageSource {
     }
 
     public GlideUrl getGlideUrl() {
+        Uri uriVal = getUri();
+        if (Uri.EMPTY.equals(uriVal)) {
+            return null;
+        }
         return new GlideUrl(getUri().toString(), getHeaders());
     }
 
