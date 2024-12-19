@@ -1,52 +1,52 @@
-package com.dylanvann.fastimage;
+// package com.dylanvann.fastimage;
 
-import android.app.Activity;
+// import android.app.Activity;
 
-import androidx.annotation.NonNull;
+// import androidx.annotation.NonNull;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.model.GlideUrl;
-import com.facebook.react.bridge.Promise;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.views.imagehelper.ImageSource;
+// import com.bumptech.glide.Glide;
+// import com.bumptech.glide.load.model.GlideUrl;
+// import com.facebook.react.bridge.Promise;
+// import com.facebook.react.bridge.ReactApplicationContext;
+// import com.facebook.react.bridge.ReactContextBaseJavaModule;
+// import com.facebook.react.bridge.ReactMethod;
+// import com.facebook.react.bridge.ReadableArray;
+// import com.facebook.react.bridge.ReadableMap;
+// import com.facebook.react.views.imagehelper.ImageSource;
 
-class FastImageViewModule extends NativeFastImageViewSpec {
+// class FastImageViewModule extends NativeFastImageViewSpec {
 
-    FastImageViewModuleImplementation impl;
+//     FastImageViewModuleImplementation impl;
 
-    FastImageViewModule(ReactApplicationContext reactContext) {
-        super(reactContext);
-        impl = new FastImageViewModuleImplementation(reactContext);
-    }
+//     FastImageViewModule(ReactApplicationContext reactContext) {
+//         super(reactContext);
+//         impl = new FastImageViewModuleImplementation(reactContext);
+//     }
 
-    @NonNull
-    @Override
-    public String getName() {
-        return impl.REACT_CLASS;
-    }
+//     @NonNull
+//     @Override
+//     public String getName() {
+//         return impl.REACT_CLASS;
+//     }
 
-    @Override
-    public void preload(final ReadableArray sources) {
-        impl.preload(sources);
-    }
+//     @Override
+//     public void preload(final ReadableArray sources) {
+//         impl.preload(sources);
+//     }
 
-    @Override
-    public void clearMemoryCache(final Promise promise) {
-        impl.clearMemoryCache(promise);
-    }
+//     @Override
+//     public void clearMemoryCache(final Promise promise) {
+//         impl.clearMemoryCache(promise);
+//     }
 
-    @Override
-    public void clearDiskCache(Promise promise) {
-        impl.clearDiskCache(promise);
-    }
+//     @Override
+//     public void clearDiskCache(Promise promise) {
+//         impl.clearDiskCache(promise);
+//     }
 
-    @Override
-    public void getCachePath(final ReadableMap source,Promise promise) {
-        impl.getCachePath(source,promise);
-    }
+//     @Override
+//     public void getCachePath(final ReadableMap source,Promise promise) {
+//         impl.getCachePath(source,promise);
+//     }
 
-}
+// }
