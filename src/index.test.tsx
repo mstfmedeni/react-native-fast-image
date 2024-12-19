@@ -12,6 +12,7 @@ describe('FastImage (iOS)', () => {
             preload: Function.prototype,
             clearMemoryCache: Function.prototype,
             clearDiskCache: Function.prototype,
+            getCachePath: Function.prototype,
         }
     })
 
