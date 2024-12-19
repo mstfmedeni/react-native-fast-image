@@ -21,14 +21,14 @@ import com.facebook.react.bridge.ReactApplicationContext;
 
 class FastImageViewModuleImplementation {
 
-    private static final String REACT_CLASS = "FastImageView";
+    static final String REACT_CLASS = "FastImageView";
     private static final String ERROR_LOAD_FAILED = "ERROR_LOAD_FAILED";
 
     ReactApplicationContext reactContext;
 
     FastImageViewModuleImplementation(ReactApplicationContext reactContext){
         this.reactContext = reactContext;
-        
+
     }
 
 
