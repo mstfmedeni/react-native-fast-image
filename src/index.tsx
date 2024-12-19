@@ -212,10 +212,7 @@ function FastImageBase({
     const resolvedSource = Image.resolveAssetSource(
         source as any,
     ) as ImageResolvedAssetSource & { headers: any }
-    if (
-        resolvedSource?.headers &&
-        (FABRIC_ENABLED || Platform.OS === 'android')
-    ) {
+    if (resolvedSource?.headers && FABRIC_ENABLED) {
         // we do it like that to trick codegen
         const headersArray: { name: string; value: string }[] = []
         Object.keys(resolvedSource.headers).forEach((key) => {
