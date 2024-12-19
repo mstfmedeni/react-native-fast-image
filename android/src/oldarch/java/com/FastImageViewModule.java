@@ -43,4 +43,9 @@ class FastImageViewModule extends ReactContextBaseJavaModule {
     public void clearDiskCache(Promise promise) {
         impl.clearDiskCache(promise);
     }
+
+    @ReactMethod
+    public void getCachePath(final ReadableMap source,Promise promise) {
+        impl.getCachePath(source,promise);
+    }
 }

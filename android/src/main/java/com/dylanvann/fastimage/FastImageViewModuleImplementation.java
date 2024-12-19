@@ -15,18 +15,22 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.facebook.react.bridge.Promise;
 import java.io.File;
 import com.facebook.react.bridge.ReactApplicationContext;
 
 class FastImageViewModuleImplementation {
+
+    private static final String REACT_CLASS = "FastImageView";
+    private static final String ERROR_LOAD_FAILED = "ERROR_LOAD_FAILED";
+
     ReactApplicationContext reactContext;
-    
+
     FastImageViewModuleImplementation(ReactApplicationContext reactContext){
         this.reactContext = reactContext;
+        
     }
-    
- private static final String ERROR_LOAD_FAILED = "ERROR_LOAD_FAILED";
-    public static final String REACT_CLASS = "FastImageView";
+
 
     private Activity getCurrentActivity(){
         return reactContext.getCurrentActivity();
@@ -90,7 +94,6 @@ class FastImageViewModuleImplementation {
         promise.resolve(null);
     }
 
-    @ReactMethod
     public void getCachePath(final ReadableMap source, final Promise promise) {
         final Activity activity = getCurrentActivity();
         if (activity == null) return;
