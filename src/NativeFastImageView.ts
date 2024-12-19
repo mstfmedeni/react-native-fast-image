@@ -1,12 +1,23 @@
 import type { TurboModule } from 'react-native'
 import { TurboModuleRegistry } from 'react-native'
 
+export enum Priority {
+    Low = 'low',
+    Normal = 'normal',
+    High = 'high',
+}
+
+export enum CacheControl {
+    Immutable = 'immutable',
+    Web = 'web',
+    CacheOnly = 'cacheOnly',
+}
+
 export interface Source {
     uri: string
-    // FastImage için gerekli diğer özellikler
     headers?: { [key: string]: string }
-    priority?: 'low' | 'normal' | 'high'
-    cache?: 'immutable' | 'web' | 'cacheOnly'
+    priority?: Priority
+    cache?: CacheControl
 }
 
 export interface Spec extends TurboModule {
