@@ -209,12 +209,12 @@ function FastImageBase({
     const FABRIC_ENABLED = !!global?.nativeFabricUIManager
 
     // this type differs based on the `source` prop passed
-    const resolvedSource = Image.resolveAssetSource(
+    let resolvedSource = Image.resolveAssetSource(
         source as any,
     ) as ImageResolvedAssetSource & { headers: any }
     if (resolvedSource?.headers && FABRIC_ENABLED) {
         // we do it like that to trick codegen
-        const headersArray: { name: string; value: string }[] = []
+        let headersArray: { name: string; value: string }[] = []
         Object.keys(resolvedSource.headers).forEach((key) => {
             headersArray.push({ name: key, value: resolvedSource.headers[key] })
         })
