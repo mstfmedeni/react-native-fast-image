@@ -96,7 +96,10 @@ class FastImageViewModuleImplementation {
 
     public void getCachePath(final ReadableMap source, final Promise promise) {
         final Activity activity = getCurrentActivity();
-        if (activity == null) return;
+        if (activity == null) {
+            promise.resolve(null);
+            return;
+        }
 
         activity.runOnUiThread(new Runnable() {
             @Override

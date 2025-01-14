@@ -182,9 +182,10 @@ function FastImageBase({
     ...props
 }: FastImageProps & { forwardedRef: React.Ref<any> }) {
     if (fallback) {
+        let resolvedSource: any = false
         const cleanedSource = { ...(source as any) }
         delete cleanedSource.cache
-        const resolvedSource = Image.resolveAssetSource(cleanedSource)
+        resolvedSource = Image.resolveAssetSource(cleanedSource)
 
         return (
             <View style={[styles.imageContainer, style]} ref={forwardedRef}>
@@ -213,12 +214,14 @@ function FastImageBase({
         source as any,
     ) as ImageResolvedAssetSource & { headers: any }
     if (resolvedSource?.headers && FABRIC_ENABLED) {
+        let newResolvedSource = { ...resolvedSource }
         // we do it like that to trick codegen
         let headersArray: { name: string; value: string }[] = []
         Object.keys(resolvedSource.headers).forEach((key) => {
             headersArray.push({ name: key, value: resolvedSource.headers[key] })
         })
-        resolvedSource.headers = headersArray
+        newResolvedSource.headers = headersArray
+        resolvedSource = newResolvedSource
     }
     const resolvedDefaultSource = resolveDefaultSource(defaultSource)
     const resolvedDefaultSourceAsString =
