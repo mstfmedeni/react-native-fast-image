@@ -43,7 +43,6 @@
         "prepack": "yarn build",
         "test": "jest",
         "type-check": "tsc --noEmit",
-        "release:nightly": "./publish-nightly.sh",
         "changelog": "auto-changelog -p",
         "release": "release-it --config .release-it.json"
     },
